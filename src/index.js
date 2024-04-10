@@ -6,7 +6,11 @@ import LikeRouter from "./routes/like.route.js";
 
 const app = express();
 app.use(express.json());
-app.use(cors());
+app.use(
+  cors({
+    origin: ["http://localhost:3000", "http://localhost:8000"],
+  })
+);
 dotenv.config();
 const PORT = process.env.PORT || 8003;
 
